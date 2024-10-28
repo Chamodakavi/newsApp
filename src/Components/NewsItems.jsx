@@ -2,14 +2,16 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import { Connection } from '../utils/Connection';
 import NewsCard from './NewsCard';
+import { CustomConnection } from '../utils/Connection';
 
 const NewsItems = () => {
 
     const [articles,setArticles] = useState([]);
+    const [category,setCategory] = useState('general');
 
     useEffect(
         ()=>{
-            Connection(setArticles);
+            CustomConnection(setArticles,category);
         },[]
     )
     console.log(articles)
